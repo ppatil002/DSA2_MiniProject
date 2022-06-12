@@ -9,11 +9,15 @@ IMPLEMENTING PORT STEMMER AND WORDNET IN C
 ### Steps to implement the command on Linux OS
 1. Clone the repository
 ```sh
-git clone "https://github.com/pt3002/TAR_command"
+git clone "https://github.com/ppatil002/DSA2_MiniProject.git"
 ```
 2. At the project root run:
 ```sh
 make
+```
+3. Runn the command
+```sh
+./stem
 ```
 
 <h3>Referenes</h3>
