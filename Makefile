@@ -1,14 +1,20 @@
-final : main.o stmr.o demo.o
-	gcc -o final main.o stmr.o demo.o
+stem : main.o stmr.o wordnet.o options.o
+	gcc -o stem main.o stmr.o wordnet.o options.o
 
 main.o : main.c 
 	gcc -c main.c 
 
-stmr.o : stmr.c stmr.h 
+stmr.o : stmr.c stmr.h
 	gcc -c stmr.c
 
-demo.o : demo.c demo.h
-	gcc -c demo.c
+wordnet.o : wordnet.c wordnet.h
+	gcc -c wordnet.c
+ 
+option.o : options.c options.h
+	gcc -c options.c
+
+graph.o : graph.c
+	gcc -c graph.c
 
 
 

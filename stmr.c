@@ -1,56 +1,8 @@
-/* This is the Porter stemming algorithm, coded up in ANSI C by the
- * author. It may be be regarded as canonical, in that it follows the
- * algorithm presented in
- *
- * Porter, 1980, An algorithm for suffix stripping, Program, Vol. 14,
- * no. 3, pp 130-137,
- *
- * only differing from it at the points marked --DEPARTURE-- below.
- *
- * See also http://www.tartarus.org/~martin/PorterStemmer
- *
- * The algorithm as described in the paper could be exactly replicated
- * by adjusting the points of DEPARTURE, but this is barely necessary,
- * because (a) the points of DEPARTURE are definitely improvements, and
- * (b) no encoding of the Porter stemmer I have seen is anything like
- * as exact as this version, even with the points of DEPARTURE!
- *
- * You can compile it on Unix with 'gcc -O3 -o stem stem.c' after which
- * 'stem' takes a list of inputs and sends the stemmed equivalent to
- * stdout.
- *
- * The algorithm as encoded here is particularly fast.
- *
- * Release 1: was many years ago
- * Release 2: 11 Apr 2013
- *     fixes a bug noted by Matt Patenaude <matt@mattpatenaude.com>,
- *
- *     case 'o': if (ends("\03" "ion") && (b[j] == 's' || b[j] == 't')) break;
- *         ==>
- *     case 'o': if (ends("\03" "ion") && j >= k0 && (b[j] == 's' || b[j] == 't')) break;
- *
- *     to avoid accessing b[k0-1] when the word in b is "ion".
- * Release 3: 25 Mar 2014
- *     fixes a similar bug noted by Klemens Baum <klemensbaum@gmail.com>,
- *     that if step1ab leaves a one letter result (ied -> i, aing -> a etc),
- *     step2 and step4 access the byte before the first letter. So we skip
- *     steps after step1ab unless k > k0. */
 #include <string.h>
 #include <stdio.h>
 #include "stmr.h"
 
-/* The main part of the stemming algorithm starts here. b is a buffer
- * holding a word to be stemmed. The letters are in b[k0], b[k0+1] ...
- * ending at b[k]. In fact k0 = 0 in this demo program. k is readjusted
- * downwards as the stemming progresses. Zero termination is not in fact
- * used in the algorithm.
- *
- * Note that only lower case sequences are stemmed. Forcing to lower case
- * should be done before stem(...) is called. */
-
-/* buffer for word to be stemmed */
 static char *b;
-
 static int k;
 static int k0;
 
@@ -76,11 +28,6 @@ static int isConsonant(int index)
   default:
     return TRUE;
   }
-}
-
-void pratik()
-{
-  printf("Pratik");
 }
 
 /* Measure the number of consonant sequences between
@@ -189,11 +136,6 @@ static int isDoubleConsonant(int index)
 
 /* `TRUE` when `i - 2, i - 1, i` has the form
  * `consonant - vowel - consonant` and also if the second
- * C is not `"w"`, `"x"`, or `"y"`. this is used when
- * trying to restore an `e` at the end of a short word.
- *
- * Such as:
- *
  * `cav(e)`, `lov(e)`, `hop(e)`, `crim(e)`, but `snow`,
  * `box`, `tray`.
  */
@@ -427,17 +369,6 @@ static void step2()
 
     break;
   case 'l':
-    /* --DEPARTURE--: To match the published algorithm,
-     * replace this line with:
-     *
-     * ```
-     * if (ends("\04" "abli")) {
-     *     replace("\04" "able");
-     *
-     *     break;
-     * }
-     * ```
-     */
     if (ends("\03"
              "bli"))
     {
@@ -565,7 +496,6 @@ static void step2()
     }
 
     break;
-  /* --DEPARTURE--: To match the published algorithm, delete this line. */
   case 'g':
     if (ends("\04"
              "logi"))
@@ -577,8 +507,7 @@ static void step2()
   }
 }
 
-/* `step3()` deals with -ic-, -full, -ness etc.
- * similar strategy to step2. */
+/* `step3()` deals with -ic-, -full, -ness etc.*/
 static void step3()
 {
   switch (b[k])
@@ -742,7 +671,6 @@ static void step4()
       break;
     }
 
-    /* takes care of -ous */
     if (ends("\02"
              "ou"))
     {
@@ -831,36 +759,19 @@ static void step5()
   }
 }
 
-/* In `stem(p, i, j)`, `p` is a `char` pointer, and the
- * string to be stemmed is from `p[i]` to
- * `p[j]` (inclusive).
- *
- * Typically, `i` is zero and `j` is the offset to the
- * last character of a string, `(p[j + 1] == '\0')`.
- * The stemmer adjusts the characters `p[i]` ... `p[j]`
- * and returns the new end-point of the string, `k`.
- *
- * Stemming never increases word length, so `i <= k <= j`.
- *
- * To turn the stemmer into a module, declare 'stem' as
- * extern, and delete the remainder of this file. */
 int stem(char *p, int index, int position)
 {
-  /* Copy the parameters into statics. */
   b = p;
   k = position;
   k0 = index;
 
   if (k <= k0 + 1)
   {
-    return k; /* --DEPARTURE-- */
+    return k;
   }
 
-  /* With this line, strings of length 1 or 2 don't
-   * go through the stemming process, although no
-   * mention is made of this in the published
-   * algorithm. Remove the line to match the published
-   * algorithm. */
+  /*strings of length 1 or 2 don't
+   * go through the stemming process*/
   step1ab();
 
   if (k > k0)
