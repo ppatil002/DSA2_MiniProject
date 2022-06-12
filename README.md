@@ -1,5 +1,5 @@
-# DSA2_MiniProject
-DSA 2 Mini Project
+#NLTK TOOLKIT IN C
+IMPLEMENTING PORT STEMMER AND WORDNET IN C
 
 
 ### Example of WordNet
