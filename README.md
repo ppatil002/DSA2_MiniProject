@@ -6,7 +6,7 @@ IMPLEMENTING PORT STEMMER AND WORDNET IN C
 ![Sample Wordnet](https://github.com/ppatil002/DSA2_MiniProject/blob/master/wordmap.jpg)
 
 
-### Steps to implement the command on Linux OS
+### Steps to implement the toolkit
 1. Clone the repository
 ```sh
 git clone "https://github.com/ppatil002/DSA2_MiniProject.git"
