@@ -21,8 +21,8 @@ make
 ```
 
 ### Concepts Used 
-1. Graphs for creating a dense network
-2. Regular Expression![image](https://user-images.githubusercontent.com/87142731/173344936-7d1836d7-dda4-4bb4-a0e6-5c494e219c60.png)
+1. Graphs
+2. Regular Expressions
 
 
 
