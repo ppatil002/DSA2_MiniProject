@@ -29,23 +29,20 @@ make
 ```
 
 # Screenshots
-1. Starting Message
-![Introduction](https://user-images.githubusercontent.com/87142754/153142003-e797366c-b5c8-4cbc-8052-e1b9ee3e7a46.png)
+1. Taking Dataset from file
+![InputData File](https://github.com/ppatil002/DSA2_MiniProject/blob/master/Screenshots/option1_1.png)
 
-2. Writing in a file
-![Writing in File](https://user-images.githubusercontent.com/87142754/153142125-97ee2009-4789-490f-a5cf-bbd3019330d4.png)
+2. Training the Dataset
+![Option1](https://github.com/ppatil002/DSA2_MiniProject/blob/master/Screenshots/option1.png)
 
-3. Searching in a file
-![Finding](https://user-images.githubusercontent.com/87142754/153142202-0875fbd4-9466-4c74-9416-bb49285f05f7.png)
+3. Printing the wordnet
+![Option2](https://github.com/ppatil002/DSA2_MiniProject/blob/master/Screenshots/option2.png)
 
-4. Warning - Quitting without saving
-![Quiting Without Saving](https://user-images.githubusercontent.com/87142754/153142308-fd0ce270-07a5-4780-a055-09acedf68fb4.png)
+4. Printing the Relations related to particular stemmed word
+![Option3](https://github.com/ppatil002/DSA2_MiniProject/blob/master/Screenshots/option3.png)
 
-5. Saved Successfully
-![Saved Successfully](https://user-images.githubusercontent.com/87142754/153142460-4021dd98-4c6b-4884-b256-8c21381b4795.png)
-
-6. File written on disk.
-![File Written on Disk](https://user-images.githubusercontent.com/87142754/153142519-b5eeaa08-7391-4519-8cc0-68c1a34c6d12.png)
+5. Finding the stemmed of particular word
+<!-- ![Saved Successfully](https://user-images.githubusercontent.com/87142754/153142460-4021dd98-4c6b-4884-b256-8c21381b4795.png) -->
 
 
 ## Applications
