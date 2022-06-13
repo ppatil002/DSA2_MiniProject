@@ -1,5 +1,5 @@
 <h1>NLTK TOOLKIT IN C</h1>
-<h2>IMPLEMENTING PORT STEMMER AND WORDNET IN C</h2?
+<h2>IMPLEMENTING PORT STEMMER AND WORDNET IN C</h2>
 
 ##Introduction :round_pushpin:
 The Porter stemming algorithm [(‘Porter stemmer’)](https://github.com/ppatil002/DSA2_MiniProject.git) is the process of reducing inflection in words to their root forms such as mapping a group of words to the same stem.</br>
@@ -28,7 +28,7 @@ make
 ```
 
 
-## :o: Applications
+## Applications
 - [Stemming](https://github.com/ppatil002/DSA2_MiniProject.git) is most common text pre-processing techniques in [NLP](https://github.com/ppatil002/DSA2_MiniProject.git) used to clean the data which makes it easier to process it further
 - [WordNet](https://github.com/ppatil002/DSA2_MiniProject.git) is a kind of dictionary which is used to map the relations between different set of words having same common background
 
