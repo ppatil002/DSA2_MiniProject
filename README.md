@@ -19,6 +19,9 @@ make
 ```sh
 ./stem
 ```
+### Applications
+- Stemming is most common text pre-processing techniques in NLP used to clean the data which makes it easier to process it further
+- WordNet is a kind of dictionary which is used to map the relations between different set of words having same common background
 
 ### Concepts Used 
 1. Graphs
@@ -26,7 +29,7 @@ make
 
 
 
-<h3>Referenes</h3>
+### Referenes
 <a href="https://tartarus.org/martin/PorterStemmer/def.txt">Porter Stemmer Algorithm</a>
 
 
