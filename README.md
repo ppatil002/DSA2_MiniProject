@@ -20,10 +20,21 @@ make
 ./stem
 ```
 ## Applications
-'''diff
-- +Stemming is most common text pre-processing techniques in NLP used to clean the data which makes it easier to process it further
-- @@WordNet@@ is a kind of dictionary which is used to map the relations between different set of words having same common background
-'''
+- Stemming is most common text pre-processing techniques in NLP used to clean the data which makes it easier to process it further
+- WordNet is a kind of dictionary which is used to map the relations between different set of words having same common background
+
+```json
+   // code for coloring
+```
+```html
+   // code for coloring
+```
+```js
+   // code for coloring
+```
+```css
+   // code for coloring
+```
 
 ## Concepts Used 
 1. Graphs
