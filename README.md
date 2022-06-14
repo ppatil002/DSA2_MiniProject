@@ -11,7 +11,7 @@ Programs    :arrow_right: program</br></br>
 
 
 ### Example of WordNet
-![Sample Wordnet](https://github.com/ppatil002/DSA2_MiniProject/blob/master/wordnet.png)
+![Sample Wordnet](https://github.com/ppatil002/DSA2_MiniProject/blob/master/wordNet.png)
 
 
 ### Steps to implement the toolkit
